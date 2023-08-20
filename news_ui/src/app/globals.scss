@@ -1,0 +1,64 @@
+:root {}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+    &:visited {
+        color: unset;
+    }
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+
+// in real world I'd rather break this into specific components etc
+// just putting it here for speed.
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    // display: block;
+    position: absolute;
+    z-index: 1;
+
+    // I'd prefer to use css variables for colours.
+    // But there's a whole lot you could do.
+    background: white;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 2px 2px 2px;
+    li {
+        min-width: max-content;
+        word-break: break-all;
+    }
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-link {
+    text-transform:uppercase;
+    font-weight: 800;
+    padding-inline: 1rem;
+    padding-block: 0.75rem;
+    display: inline-block;
+
+    min-width: -moz-available;
+    min-width: -webkit-fill-available;
+    min-width: fill-available;
+    &:hover {
+        text-decoration-line: underline;
+        text-decoration-thickness: 0.25rem;
+        text-underline-offset: 0.5rem;
+    }
+}
